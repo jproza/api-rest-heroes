@@ -85,28 +85,28 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
   public void configure(WebSecurity web)  {
     web.ignoring().antMatchers("/v2/api-docs", "/v3/api-docs",
             "/swagger-ui.html",
-            "/swagger-ui/**","/api/test/**",h2ConsolePath + "/**","/api/auth**","/swagger-ui-heroes.html");
+            "/swagger-ui/**","/api/test/**",h2ConsolePath + "/**","/api/auth**","/swagger-ui-heroes.html","/signin.html");
 
     }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-
-
-
+    http.cors().and().csrf().disable();
   http.authorizeRequests()
                   .antMatchers("/user").hasAnyRole()
             //.hasAnyRole("USER", "ADMIN")
             .antMatchers("/admin").hasAnyRole()
             //.hasRole("ADMIN")
             .antMatchers("/")
-            .permitAll()
+
+
+
+          .permitAll()
 
             .and()
             .formLogin()
             .permitAll()
-            //.loginPage("/login")
-            //.usernameParameter("username")
+            .loginPage("/signin")
             .and()
             .logout()
             .logoutRequestMatcher(

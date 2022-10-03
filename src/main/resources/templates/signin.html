@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>Login - Heroes</title>
 </head>
 <body>
 <h1>Login page</h1>
-<form th:action="@{http://localhost:8080/api/auth/sigin}" method="post">
+<form th:action="@{/api/auth/login}" method="post">
     <div><label>Usuario: </label><input type="text" name="username"></div>
     <div><label>Password: </label><input type="password" name="password"></div>
     <div><button name="submit" type="submit" >Login</button></div>

@@ -52,7 +52,7 @@ public class AuthController {
 
   @LogEntryExit(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @PostMapping("/login")
-  public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+  public ResponseEntity<?> authenticateUser(@Valid LoginRequest loginRequest) {
 
     Authentication authentication = authenticationManager
         .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -136,5 +136,5 @@ public class AuthController {
 
   @LogEntryExit(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @GetMapping("/signin")
-  public String loginUser() { return "templates/login.html"; }
+  public String loginUser() { return "templates/signin.html"; }
 }
