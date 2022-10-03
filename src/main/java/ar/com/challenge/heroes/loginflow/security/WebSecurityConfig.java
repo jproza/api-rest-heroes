@@ -82,9 +82,9 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 
   @Override
   public void configure(WebSecurity web)  {
-    web.ignoring().antMatchers("/v2/api-docs", "/v3/api-docs",
+    web.ignoring().antMatchers("/v2/api-docs", "/v3/api-docs","/api-docs/**",
             "/swagger-ui.html",
-            "/swagger-ui/**","/api/test/**",h2ConsolePath + "/**","/api/auth**","/swagger-ui-heroes.html","/signin.html");
+            "/swagger-ui/**","/api/test/**",h2ConsolePath + "/**","/api/auth**","/swagger-ui-heroes.html");
 
     }
 
@@ -97,9 +97,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
             .antMatchers("/admin").hasAnyRole()
             //.hasRole("ADMIN")
             .antMatchers("/")
-
-
-
+          .hasAnyRole().antMatchers("/swagger-ui/**")
           .permitAll()
 
             .and()
