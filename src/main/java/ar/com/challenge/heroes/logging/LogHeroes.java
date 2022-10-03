@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface LogEntryExit {
+public @interface LogHeroes {
   LogLevel value() default LogLevel.INFO;
   ChronoUnit unit() default ChronoUnit.SECONDS;
   boolean showArgs() default false;

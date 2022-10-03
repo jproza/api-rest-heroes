@@ -1,7 +1,7 @@
 package ar.com.challenge.heroes.loginflow.controllers;
 
 
-import ar.com.challenge.heroes.logging.LogEntryExit;
+import ar.com.challenge.heroes.logging.LogHeroes;
 import ar.com.challenge.heroes.loginflow.models.ERole;
 import ar.com.challenge.heroes.loginflow.models.Role;
 import ar.com.challenge.heroes.loginflow.payload.request.LoginRequest;
@@ -50,7 +50,7 @@ public class AuthController {
   @Autowired
   JwtUtils jwtUtils;
 
-  @LogEntryExit(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
+  @LogHeroes(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @PostMapping("/login")
   public ResponseEntity<?> authenticateUser(@Valid LoginRequest loginRequest) {
 
@@ -74,7 +74,7 @@ public class AuthController {
                                    roles));
   }
 
-  @LogEntryExit(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
+  @LogHeroes(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @PostMapping("/signup")
   public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
     if (userRepository.existsByUsername(signUpRequest.getUsername())) {
@@ -126,7 +126,7 @@ public class AuthController {
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
 
-  @LogEntryExit(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
+  @LogHeroes(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @PostMapping("/logout")
   public ResponseEntity<?> logoutUser() {
     ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
@@ -134,7 +134,7 @@ public class AuthController {
         .body(new MessageResponse("You've been signed out!"));
   }
 
-  @LogEntryExit(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
+  @LogHeroes(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @GetMapping("/signin")
   public String loginUser() { return "templates/signin.html"; }
 }

@@ -18,14 +18,16 @@ import java.util.Objects;
 import java.util.StringJoiner;
 @Aspect
 @Component
-public class LogEntryExitAspect {
-  @Around("@annotation(ar.com.challenge.heroes.logging.LogEntryExit)")
+public class LogHeroesAspect {
+
+
+  @Around("@annotation(ar.com.challenge.heroes.logging.LogHeroes)")
   public Object log(ProceedingJoinPoint point) throws Throwable {
     var codeSignature = (CodeSignature) point.getSignature();
     var methodSignature = (MethodSignature) point.getSignature();
     Method method = methodSignature.getMethod();
     Logger logger = LoggerFactory.getLogger(method.getDeclaringClass());
-    var annotation = method.getAnnotation(LogEntryExit.class);
+    var annotation = method.getAnnotation(LogHeroes.class);
     LogLevel level = annotation.value();
     ChronoUnit unit = annotation.unit();
     boolean showArgs = annotation.showArgs();
