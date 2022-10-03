@@ -4,6 +4,7 @@ import ar.com.challenge.heroes.entities.Heroe;
 import ar.com.challenge.heroes.reqres.HeroeRequest;
 import ar.com.challenge.heroes.services.HeroeService;
 import ar.com.challenge.heroes.logging.LogEntryExit;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -36,8 +37,13 @@ public class HeroeController {
   }
   @LogEntryExit(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @GetMapping
-  public ResponseEntity<List<Heroe>> getAllHeroes() {
-    return ResponseEntity.ok(heroeService.getAllHeroes());
+  public ResponseEntity<List<Heroe>> getAllHeroes(@RequestParam(required = false) String nombre) {
+    if (Strings.isEmpty(nombre)) {
+      return ResponseEntity.ok(heroeService.getAllHeroes());
+    } else {
+      return ResponseEntity.ok(heroeService.findByNombreContainingIgnoreCase(nombre));
+    }
+
   }
   @LogEntryExit(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @GetMapping("/{id}")

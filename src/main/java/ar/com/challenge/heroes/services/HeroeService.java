@@ -37,6 +37,11 @@ public class HeroeService {
     return heroeRepository.findAll();
   }
 
+  public List<Heroe> findByNombreContainingIgnoreCase(String nombre) {
+    return heroeRepository.findByNombreContainingIgnoreCase(nombre);
+  }
+
+
   public Heroe getHeroesById(Long id) {
     Optional<Heroe> requestedHeroes = heroeRepository.findById(id);
 
@@ -47,6 +52,9 @@ public class HeroeService {
     return requestedHeroes.get();
   }
 
+  @Caching(evict = {@CacheEvict(value = "getAllHeroescache", allEntries = true),
+          @CacheEvict(value = "heroecache", key = "#heroeToUpdateRequest.nombre")
+  })
   @Transactional
   public Heroe updateHeroes(Long id, HeroeRequest heroeToUpdateRequest) {
 
