@@ -1,6 +1,6 @@
 package ar.com.challenge.heroes.loginflow.security.jwt;
 
-import ar.com.challenge.heroes.loginflow.security.services.UserDetailsServiceImpl;
+import ar.com.challenge.heroes.loginflow.security.UserDetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -12,6 +12,7 @@
     <artifactId>heroes-application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>heroes-application</name>
+    <packaging>jar</packaging>
     <description>Jproza - project for Spring Boot</description>
 
     <properties>

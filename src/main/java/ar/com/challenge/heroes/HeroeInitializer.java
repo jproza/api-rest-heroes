@@ -1,7 +1,7 @@
 package ar.com.challenge.heroes;
 
 import ar.com.challenge.heroes.entities.Heroe;
-import ar.com.challenge.heroes.repo.HeroeRepository;
+import ar.com.challenge.heroes.repository.HeroeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
