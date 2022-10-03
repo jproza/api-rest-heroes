@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "35643026-8421-424d-9715-3aecbc31fcbe",
+		"name": "heroes-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4933387"
+	},
+	"item": [
+		{
+			"name": "1.Login - Form",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Cookie",
+						"value": "bezkoder=; jwt1CookieName=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqcHJvemEiLCJpYXQiOjE2NjQ4MDQ1MjgsImV4cCI6MTY2NDg5MDkyOH0.R7WswRFoHvYEmyqYL0ZSZo7JvIsC7fKayiAwHvngJW0ZMrLvtjz2x1vA09z6LiUCp6fZ7Olkz4gFR_mGqNdkzg; JSESSIONID=0C205AF00B03D229E6F4F61A7C811D7E; Idea-57c8167d=d00a74af-f943-43ec-b253-14a149a58410"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:8080"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:8080/signin"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "document"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "navigate"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Sec-Fetch-User",
+						"value": "?1"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"105\", \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"105\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "_csrf",
+							"value": "df5e4bfa-11aa-466e-bef1-b690dc3a14cb",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "jproza",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "jproza",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "max-age=0"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Cookie",
+						"value": "bezkoder=; jwt1CookieName=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqcHJvemEiLCJpYXQiOjE2NjQ4MDQ1MjgsImV4cCI6MTY2NDg5MDkyOH0.R7WswRFoHvYEmyqYL0ZSZo7JvIsC7fKayiAwHvngJW0ZMrLvtjz2x1vA09z6LiUCp6fZ7Olkz4gFR_mGqNdkzg; JSESSIONID=0C205AF00B03D229E6F4F61A7C811D7E; Idea-57c8167d=d00a74af-f943-43ec-b253-14a149a58410"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:8080"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:8080/signin"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "document"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "navigate"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Sec-Fetch-User",
+						"value": "?1"
+					},
+					{
+						"key": "Upgrade-Insecure-Requests",
+						"value": "1"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"105\", \"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"105\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "_csrf",
+							"value": "df5e4bfa-11aa-466e-bef1-b690dc3a14cb",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "jproza",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "jproza",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. get all Heroes (protegido)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JSESSIONID",
+						"value": "B50947D3D8C4072983A6270B08A15CD9",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/heroes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"heroes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. get all Heroes  Contains (protegido)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JSESSIONID",
+						"value": "B50947D3D8C4072983A6270B08A15CD9",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/heroes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"heroes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. get Heroe por ID (protegido)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JSESSIONID",
+						"value": "B50947D3D8C4072983A6270B08A15CD9",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/heroes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"heroes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Crear Heroe (protegido)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "JSESSIONID",
+						"value": "B50947D3D8C4072983A6270B08A15CD9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"Hormiga Atomica\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/heroes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"heroes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Actualizar Heroe (protegido)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "JSESSIONID",
+						"value": "B50947D3D8C4072983A6270B08A15CD9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"Hulk2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/heroes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"heroes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Delete Heroe por ID (protegido)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JSESSIONID",
+						"value": "B50947D3D8C4072983A6270B08A15CD9",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/heroes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"heroes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
