@@ -52,7 +52,7 @@ public class AuthController {
 
   @LogHeroes(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @PostMapping("/login")
-  public ResponseEntity<?> authenticateUser(@Valid LoginRequest loginRequest) {
+  public ResponseEntity<?> authenticateUser(@Valid  @RequestBody LoginRequest loginRequest) {
 
     Authentication authentication = authenticationManager
         .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -131,7 +131,7 @@ public class AuthController {
   public ResponseEntity<?> logoutUser() {
     ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
     return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
-        .body(new MessageResponse("You've been signed out!"));
+        .body(new MessageResponse("Logout exitoso, para usar la api vuelva a iniciar session desde el login!"));
   }
 
   @LogHeroes(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)

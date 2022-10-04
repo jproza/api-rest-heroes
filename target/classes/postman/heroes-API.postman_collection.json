@@ -106,14 +106,16 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/signin",
+					"raw": "http://localhost:8080/api/auth/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"signin"
+						"api",
+						"auth",
+						"login"
 					]
 				}
 			},
@@ -193,31 +195,6 @@
 						"value": "\"macOS\""
 					}
 				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "_csrf",
-							"value": "df5e4bfa-11aa-466e-bef1-b690dc3a14cb",
-							"type": "text"
-						},
-						{
-							"key": "username",
-							"value": "jproza",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "jproza",
-							"type": "text"
-						},
-						{
-							"key": "submit",
-							"value": "",
-							"type": "text"
-						}
-					]
-				},
 				"url": {
 					"raw": "http://localhost:8080/api/auth/logout",
 					"protocol": "http",
@@ -272,7 +249,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/heroes",
+					"raw": "http://localhost:8080/api/heroes?nombre=h",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -281,6 +258,12 @@
 					"path": [
 						"api",
 						"heroes"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "h"
+						}
 					]
 				}
 			},
