@@ -1,6 +1,7 @@
 package ar.com.challenge.heroes.loginflow.controllers;
 
 
+import ar.com.challenge.heroes.entities.Heroe;
 import ar.com.challenge.heroes.logging.LogHeroes;
 import ar.com.challenge.heroes.loginflow.models.ERole;
 import ar.com.challenge.heroes.loginflow.models.Role;
@@ -13,6 +14,11 @@ import ar.com.challenge.heroes.loginflow.payload.response.MessageResponse;
 import ar.com.challenge.heroes.loginflow.repository.RoleRepository;
 import ar.com.challenge.heroes.loginflow.security.jwt.JwtUtils;
 import ar.com.challenge.heroes.loginflow.security.services.UserDetailsImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
@@ -52,6 +58,15 @@ public class AuthController {
 
   @LogHeroes(showArgs = true, showResult = true, unit = ChronoUnit.MILLIS)
   @PostMapping("/login")
+  @Operation(summary = "Autenticar el usuario de la API")
+  @ApiResponses(value = {
+          @ApiResponse(responseCode = "200", description = "Se autenticó correctamente",
+                  content = { @Content(mediaType = "application/json",
+                          schema = @Schema(implementation = Heroe.class)) }),
+          @ApiResponse(responseCode = "400", description = "Parametro incorrecto",
+                  content = @Content),
+          @ApiResponse(responseCode = "404", description = "Usuario inexistente o con error",
+                  content = @Content) })
   public ResponseEntity<?> authenticateUser(@Valid  @RequestBody LoginRequest loginRequest) {
 
     Authentication authentication = authenticationManager
