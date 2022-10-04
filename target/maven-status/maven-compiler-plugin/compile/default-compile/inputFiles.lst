@@ -1,7 +1,7 @@
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/reqres/HeroeRequest.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/ex/HeroeNotFoundException.java
-/usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/logging/LogEntryExitAspect.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/security/WebSecurityConfig.java
+/usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/ex/GlobalExceptionHandler.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/security/services/UserDetailsImpl.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/payload/response/MessageResponse.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/payload/request/LoginRequest.java
@@ -12,8 +12,9 @@
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/controllers/AuthController.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/security/UserDetailsServiceImpl.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/models/ERole.java
-/usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/logging/LogEntryExit.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/controller/HeroeController.java
+/usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/logging/LogHeroes.java
+/usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/logging/LogHeroesAspect.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/HeroeInitializer.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/security/jwt/JwtUtils.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/controllers/TestController.java
@@ -27,3 +28,4 @@
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/security/jwt/AuthTokenFilter.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/loginflow/payload/response/UserInfoResponse.java
 /usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/services/HeroeService.java
+/usr/local/javierprozapas/proyectos/api-rest-heroes/src/main/java/ar/com/challenge/heroes/controller/Controller.java

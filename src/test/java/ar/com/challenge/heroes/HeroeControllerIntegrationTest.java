@@ -1,8 +1,10 @@
 package ar.com.challenge.heroes;
 
 import ar.com.challenge.heroes.controller.HeroeController;
+import ar.com.challenge.heroes.ex.HeroeNotFoundException;
 import ar.com.challenge.heroes.loginflow.controllers.AuthController;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.TextNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,8 +20,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 
+import javax.swing.text.html.HTMLDocument;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ActiveProfiles("test")
 @SpringBootTest(classes = {SuperHeroesApplication.class, AuthController.class, AuthenticationManager.class},  webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, properties = {
@@ -41,19 +46,25 @@ public class HeroeControllerIntegrationTest {
   //@Sql({ "/data.sql" })
   @Test
   public void deletingKnownEntityShouldReturn404AfterDeletion() {
-    long heroeId = 1;
-    String baseUrl = "http://localhost:" + randomServerPort;
 
-    ResponseEntity<JsonNode> firstResult = this.testRestTemplate
-      .getForEntity(baseUrl + "/api/heroes/" + heroeId, JsonNode.class);
+    assertThrows(Exception.class,
+            ()->{
+              long heroeId = 1;
+              String baseUrl = "http://localhost:" + randomServerPort;
 
-    assertThat(firstResult.getStatusCode(), is(HttpStatus.OK));
+              ResponseEntity<JsonNode> firstResult = this.testRestTemplate
+                      .getForEntity(baseUrl + "/api/heroes/" + heroeId, JsonNode.class);
 
-    this.testRestTemplate.delete(baseUrl + "/api/heroes/" + heroeId);
+              assertThat(firstResult.getStatusCode(), is(HttpStatus.OK));
 
-    ResponseEntity<JsonNode> secondResult = this.testRestTemplate
-      .getForEntity(baseUrl + "/api/heroes/" + heroeId, JsonNode.class);
+              this.testRestTemplate.delete(baseUrl + "/api/heroes/" + heroeId);
 
-    assertThat(secondResult.getStatusCode(), is(HttpStatus.NOT_FOUND));
+              ResponseEntity<JsonNode> secondResult = this.testRestTemplate
+                      .getForEntity(baseUrl + "/api/heroes/" + heroeId, JsonNode.class);
+
+              assertThat(secondResult.getStatusCode(), is(HttpStatus.NOT_FOUND));
+            },"Error Heroe Eliminado. HeroeException");
+
+
   }
 }

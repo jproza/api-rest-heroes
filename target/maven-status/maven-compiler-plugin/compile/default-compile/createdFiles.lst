@@ -3,15 +3,12 @@ ar/com/challenge/heroes/loginflow/payload/request/SignupRequest.class
 ar/com/challenge/heroes/loginflow/security/jwt/AuthTokenFilter.class
 ar/com/challenge/heroes/loginflow/controllers/AuthController.class
 ar/com/challenge/heroes/loginflow/models/Role.class
-ar/com/challenge/heroes/logging/LogEntryExit.class
 ar/com/challenge/heroes/loginflow/security/jwt/JwtUtils.class
 ar/com/challenge/heroes/loginflow/payload/request/LoginRequest.class
 ar/com/challenge/heroes/entities/Heroe.class
 ar/com/challenge/heroes/SuperHeroesApplication.class
 ar/com/challenge/heroes/loginflow/repository/RoleRepository.class
-ar/com/challenge/heroes/logging/LogEntryExitAspect.class
 ar/com/challenge/heroes/loginflow/repository/UserRepository.class
-ar/com/challenge/heroes/logging/LogEntryExitAspect$1.class
 ar/com/challenge/heroes/loginflow/security/WebSecurityConfig.class
 ar/com/challenge/heroes/services/HeroeService.class
 ar/com/challenge/heroes/HeroeInitializer.class

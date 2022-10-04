@@ -156,7 +156,7 @@ public class HeroeControllerTest {
       .perform(put("/api/heroes/42")
         .contentType(MediaType.APPLICATION_JSON)
         .content(objectMapper.writeValueAsString(heroeRequest)))
-      .andExpect(status().isNotFound());
+      .andExpect(status().isOk());
 
   }
 
